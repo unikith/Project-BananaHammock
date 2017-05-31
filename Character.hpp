@@ -9,12 +9,11 @@
 #ifndef Character_hpp
 #define Character_hpp
 
-#include <stdio.h>
 #include "Sprite.hpp"
 
 class Character : public Sprite {
 public:
-    
+    Character(Window * window, std::string path) : Sprite(window, path){};
 private:
     //Beginning of turn amount of moves (moving and attacks)
     int maxNMoves;

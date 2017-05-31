@@ -9,7 +9,6 @@
 #ifndef GameBoard_hpp
 #define GameBoard_hpp
 
-#include <stdio.h>
 #include "Tile.hpp"
 
 typedef struct cordinate {
@@ -19,12 +18,14 @@ typedef struct cordinate {
 
 class GameBoard : public Drawable {
 public:
-    GameBoard();
+    GameBoard(Window * window);
     ~GameBoard();
+    
+    void draw();
     /**
         Selects the given tile.
      */
-    bool selectTile(Cordinate src);
+    bool selectTile(const Cordinate &src);
     /**
         See corresponding private members, performs
         with the currently selected tile. Will return false
@@ -34,7 +35,7 @@ public:
     bool attack(Cordinate dst);
     bool highlightPossibleMoves();
 private:
-    //Functions
+    //FUNCTIONS
     /**
      Moves the character at the given cordinate to another.
      Returns true if it's a valid move and false if an invalid move.
@@ -59,13 +60,23 @@ private:
         Returns a reference to the corresponding tile.
      */
     Tile& tileAt(Cordinate cord);
+    /*
+        Draws all the tiles onto the window.
+     */
+    void drawTiles();
+    /*
+        Generates a random map from defined tiles. (Probably won't use in later development)
+     */
+    void generateMap();
     
-    //Members
+    //MEMBERS
     Tile** board;
     int rows;
     int columns;
+    int tileLength;
     //-1,-1 if none selected
     Cordinate selectedTile;
+    Window * window;
 };
 
 #endif /* GameBoard_hpp */

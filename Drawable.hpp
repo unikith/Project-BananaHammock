@@ -9,7 +9,7 @@
 #ifndef Drawable_hpp
 #define Drawable_hpp
 
-#include <stdio.h>
+#include "Window.hpp"
 
 class Drawable {
 public:    

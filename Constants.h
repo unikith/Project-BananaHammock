@@ -11,5 +11,13 @@
 
 #define SCREEN_HEIGHT 800
 #define SCREEN_WIDTH 1280
+#define WINDOW_NAME "Test Window"
+
+/*  GameBoard.hpp   */
+//Tile length of each tile. Will modify board pixel size (Good use for zoom)
+#define TILELENGTH 80
+//Rows in the gameboard
+#define BOARDROWS 8 //THIS WONT BE CONST LATER
+#define BOARDCOLUMNS 13 //THIS WONT BE CONST LATER
 
 #endif /* Constants_h */
